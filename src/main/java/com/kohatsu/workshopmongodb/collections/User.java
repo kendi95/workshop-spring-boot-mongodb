@@ -1,4 +1,4 @@
-package com.kohatsu.workshopmongodb.entities;
+package com.kohatsu.workshopmongodb.collections;
 
 import java.io.Serializable;
 

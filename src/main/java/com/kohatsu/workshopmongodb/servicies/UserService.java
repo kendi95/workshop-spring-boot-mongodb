@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.kohatsu.workshopmongodb.collections.User;
 import com.kohatsu.workshopmongodb.dto.UserDTO;
-import com.kohatsu.workshopmongodb.entities.User;
 import com.kohatsu.workshopmongodb.repositories.UserRepository;
 import com.kohatsu.workshopmongodb.servicies.exceptions.ObjectNotFoundException;
 

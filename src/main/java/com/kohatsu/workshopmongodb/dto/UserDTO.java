@@ -2,7 +2,7 @@ package com.kohatsu.workshopmongodb.dto;
 
 import java.io.Serializable;
 
-import com.kohatsu.workshopmongodb.entities.User;
+import com.kohatsu.workshopmongodb.collections.User;
 
 public class UserDTO implements Serializable{
 

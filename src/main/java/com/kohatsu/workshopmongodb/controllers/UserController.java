@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.kohatsu.workshopmongodb.collections.User;
 import com.kohatsu.workshopmongodb.dto.UserDTO;
-import com.kohatsu.workshopmongodb.entities.User;
 import com.kohatsu.workshopmongodb.servicies.UserService;
 
 @RestController
