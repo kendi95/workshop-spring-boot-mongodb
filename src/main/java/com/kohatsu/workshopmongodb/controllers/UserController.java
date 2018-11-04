@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.kohatsu.workshopmongodb.collections.Post;
 import com.kohatsu.workshopmongodb.collections.User;
 import com.kohatsu.workshopmongodb.dto.UserDTO;
 import com.kohatsu.workshopmongodb.servicies.UserService;
@@ -54,6 +55,11 @@ public class UserController {
 	public ResponseEntity<Void> update(@PathVariable String id, @RequestBody UserDTO userDTO){
 		service.update(id, userDTO);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/{id}/posts")
+	public ResponseEntity<List<Post>> findPosts(@PathVariable String id){
+		return ResponseEntity.ok(service.findById(id).getPosts());
 	}
 	
 }
