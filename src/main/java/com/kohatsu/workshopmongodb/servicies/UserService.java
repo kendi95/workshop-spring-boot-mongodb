@@ -35,4 +35,11 @@ public class UserService {
 		repo.deleteById(user.getId());
 	}
 	
+	public User update(String id, UserDTO userDTO) {
+		User user = this.findById(id);
+		user.setName(userDTO.getName());
+		user.setEmail(userDTO.getEmail());
+		return repo.save(user);
+	}
+	
 }
