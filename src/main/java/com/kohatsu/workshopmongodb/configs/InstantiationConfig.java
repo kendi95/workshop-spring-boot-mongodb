@@ -42,6 +42,9 @@ public class InstantiationConfig implements CommandLineRunner{
 		
 		postRepo.saveAll(Arrays.asList(post1, post2));
 		
+		maria.getPosts().addAll(Arrays.asList(post1, post2));
+		repo.saveAll(Arrays.asList(maria));
+		
 	}
 
 }
