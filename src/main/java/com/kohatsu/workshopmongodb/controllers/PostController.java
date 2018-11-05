@@ -1,5 +1,6 @@
 package com.kohatsu.workshopmongodb.controllers;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,18 @@ public class PostController {
 	@RequestMapping(method=RequestMethod.GET, value="/titlesearch")
 	public ResponseEntity<List<Post>> findByTitle(@RequestParam(value="text", defaultValue="") String text){
 		return ResponseEntity.ok(service.findByTitle(URL.decodParam(text)));
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/fullsearch")
+	public ResponseEntity<List<Post>> fullSearch(
+			@RequestParam(value="text", defaultValue="") String text,
+			@RequestParam(value="minDate", defaultValue="") String minDate,
+			@RequestParam(value="maxDate", defaultValue="") String maxDate){
+		
+		Date min = URL.convertDate(minDate, new Date(0L));
+		Date max = URL.convertDate(maxDate, new Date());
+		
+		return ResponseEntity.ok(service.fullSearch(URL.decodParam(text), min, max));
 	}
 	
 	
